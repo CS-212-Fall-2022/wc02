@@ -28,7 +28,34 @@
   You are expected to submit an original proof (i.e. developed by you) that is correct and exhibits sound and precise argumentation. If you consult any sources for guidance, make sure to cite and acknowledge them duly. Your \LaTeX\ file should compile without errors on the instructors' machines. If you still use Overleaf, make sure that there are no warnings or errors. Files that do not compile cannot be graded.
   
   \begin{solution}
-    % Enter your solution here.
+    \\
+    The tuples are same in both NDFA and DFA,the only difference is of the transition function.\\
+    
+    The transition function of DFA states that if u have 1 state and 1 input then u will get 1 next state, whereas in NDFA we can get multiple next states.\\
+    
+    To convert from NDFA to DFA, we will add the multiple states visited to our states and give input against them also. So that in the end eventually for every state visited we get 1 state as our next state instead of multiple states.\\
+    
+    The language that is accepted by M -> L(M)\\
+    
+    As, we know for each DFA M=(Q,$\Sigma$,S,F,T), there is a DFA accepting the exactly same strigns as M.\\
+    
+    Proof of induction on the no. of states of N where NFA=N and DFA=f(N)=D. So, d(N)=d(f(N)).\\
+    
+    Now the Base case with $\forall$ N with only 1 state $\exists$ f(N).\\
+    
+    Our inductive hypothesis states that,\\
+    $\forall$ N with n states $\exists$ f(N) L(N)=L(f(N)),\\
+    $\forall$ N with n+1 states $\exists$ f(N) L(N')=L(f(N')),\\
+    
+    Now moving on towards our proof,\\
+    Consider a NFA with n states labeled as 1,2,3,....n.\\
+    Then f(N) will have $2^{n}$ states such that  $\emptyset,{1},{2},{3},{4},....,{1,2},{1,3},....,{1,2,3,4,5,......n}.$\\
+    
+    Now let us introduce a new state and call the NFA N'. Then f(N') will differ from f(N) in the following way, where $2^{n}$ more states added to f(N), labeled as\\
+    ${n+1},{1,n+1},{2,n+1},....,{1,2,n+1},...,{1,2,3,4,....n+1}.$\\
+    
+    So all strings that were originally accepted by f(N) will also be accepted by f(N'), having the example of L(N) $\subset$ L(f(N')).\\
+    
   \end{solution}
 \end{questions}
 \end{document}
